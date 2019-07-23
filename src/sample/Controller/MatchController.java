@@ -14,6 +14,7 @@ public class MatchController implements Initializable {
     }
 
     class preloader extends Thread{
+
         @Override
         public void run(){
             while (!Main.initialize.ready()){
