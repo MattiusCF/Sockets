@@ -182,6 +182,7 @@ public class InitializeController {
     }
     @FXML
     void continueGame(ActionEvent event) {
+        Main.initialize.reset();
         Main.initialize.playerPanel();
     }
 
