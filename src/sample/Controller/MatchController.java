@@ -27,12 +27,6 @@ public class MatchController implements Initializable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    Main.initialize.reset();
                     if(Main.initialize.isWinner()) {
                         Main.initialize.winnerPanel();
                     }else{

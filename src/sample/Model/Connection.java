@@ -127,11 +127,12 @@ public class Connection implements Runnable {
         msg="0";
         try {
             out.writeUTF("isWinner;"+room);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (Exception e){
             e.printStackTrace();
         }
-        if (msg == "2"){
+        System.out.println("En isWinner, msg retorna= "+msg);
+        if (msg.equals("2")){
             return true;
         }else{
             return false;

@@ -182,14 +182,7 @@ public class InitializeController {
     }
     @FXML
     void continueGame(ActionEvent event) {
-        try{
-            panel = FXMLLoader.load(getClass().getResource("../View/Player.fxml"));
-        }catch (IOException e){
-            e.printStackTrace();
-            System.out.println("Error cargando el panel del jugador");
-        }
-        //Pone el panel wait sobre el panel principal.
-        mainPanel.getChildren().setAll(panel);
+        Main.initialize.playerPanel();
     }
 
     @FXML
