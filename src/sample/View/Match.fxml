@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="480.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.MatchController">
+   <children>
+      <Label layoutX="120.0" layoutY="80.0" prefHeight="160.0" prefWidth="160.0" text="Animacion" />
+      <Label layoutX="140.0" layoutY="360.0" prefHeight="40.0" prefWidth="120.0" text="Espera...">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
