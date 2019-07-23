@@ -19,7 +19,7 @@ public class Connection implements Runnable {
     private int port = 2027;
     //Para trabajar en local: "localhost"
     //Para trabajar en distintos ordenadores "La ip del servidor"
-    private String host = "192.168.31.245";
+    private String host = "192.168.26.100";
 
     public Connection(){
         try{
