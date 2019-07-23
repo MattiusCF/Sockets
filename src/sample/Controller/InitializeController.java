@@ -231,6 +231,10 @@ public class InitializeController {
 
     }
 
+    public void reset(){
+        connection.reset(NRoom);
+    }
+
     public void matchPanel(){
         try{
             panel = FXMLLoader.load(getClass().getResource("../View/Match.fxml"));

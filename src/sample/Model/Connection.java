@@ -19,7 +19,7 @@ public class Connection implements Runnable {
     private int port = 2027;
     //Para trabajar en local: "localhost"
     //Para trabajar en distintos ordenadores "La ip del servidor"
-    private String host = "192.168.26.100";
+    private String host = "192.168.192.7";
 
     public Connection(){
         try{
@@ -107,16 +107,18 @@ public class Connection implements Runnable {
     }
 
     public Boolean isReady(int room){
-        msg="0";
         try {
             out.writeUTF("isReady;"+room);
             Thread.sleep(1000);
         } catch (Exception e){
             e.printStackTrace();
         }
-        if(msg=="2"){
+        System.out.print("Antes de entrar al if, la sala: "+room+" ->");
+        if(msg.equals("2")){
+            System.out.print(" Está lista");
             return true;
         }else{
+            System.out.println(" No está lista y el mensaje es: "+msg);
             return false;
         }
     }
@@ -133,6 +135,13 @@ public class Connection implements Runnable {
             return true;
         }else{
             return false;
+        }
+    }
+    public void reset(int room){
+        try {
+            out.writeUTF("resetSelect;"+room);
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
     @Override
