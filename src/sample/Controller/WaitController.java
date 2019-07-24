@@ -19,7 +19,12 @@ public class WaitController implements Initializable {
 
     @FXML
     void exitGame(ActionEvent event) {
-
+        try {
+            this.finalize();
+            Main.initialize.joinGame();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override

@@ -105,6 +105,7 @@ public class InitializeController {
         return connection.isWinner(NRoom);
     }
 
+    public Boolean tie(){ return connection.isTie(NRoom); }
     public void winnerPanel(){
         try{
             //Pane se va a usar para tener cargada la pantalla QUE SE QUIERE MOSTRAR
@@ -117,6 +118,17 @@ public class InitializeController {
         mainPanel.getChildren().setAll(panel);
     }
 
+    public void tiePanel(){
+        try{
+            //Pane se va a usar para tener cargada la pantalla QUE SE QUIERE MOSTRAR
+            panel = FXMLLoader.load(getClass().getResource("../View/TiePanel.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Error cargando el panel de empate");
+        }
+        //Pone el panel start sobre el panel principal.
+        mainPanel.getChildren().setAll(panel);
+    }
     public void losserPanel(){
         try{
             //Pane se va a usar para tener cargada la pantalla QUE SE QUIERE MOSTRAR
@@ -179,6 +191,17 @@ public class InitializeController {
         //Se carga en el pane vacio la nueva vista
         mainPanel.getChildren().setAll(panel);
     }
+    @FXML
+    void FinalPanel(){
+        try{
+            //Pane se va a usar para tener cargada la pantalla QUE SE QUIERE MOSTRAR
+            panel = FXMLLoader.load(getClass().getResource("../View/Final.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        //Se carga en el pane vacio la nueva vista
+        mainPanel.getChildren().setAll(panel);
+    }
     //Crea la conexion con el servidor y cambia a la vista siguiente
     @FXML
     void playON(ActionEvent event){
@@ -207,14 +230,14 @@ public class InitializeController {
         Main.initialize.waitPanel();
     }
 
-    public String listGames(){
-        return connection.list();
-    }
-
     public String listPlayers(){
         return connection.listP();
     }
 
+    public void deletePlayer(){
+        order = "deletePlayer;"+NRoom+";";
+        connection.deletePlayer(order);
+    }
     public void addPlayer(int nOrder){
         NRoom = nOrder;
         order = "addPlayer;"+nOrder+";";

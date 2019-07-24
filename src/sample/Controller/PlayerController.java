@@ -39,7 +39,8 @@ public class PlayerController {
 
     @FXML
     void surrender(ActionEvent event) {
-
+        Main.initialize.deletePlayer();
+        Main.initialize.FinalPanel();
     }
 
 }

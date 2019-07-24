@@ -27,6 +27,9 @@ public class MatchController implements Initializable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
+                    if(Main.initialize.tie()){
+                        Main.initialize.tiePanel();
+                    }
                     if(Main.initialize.isWinner()) {
                         Main.initialize.winnerPanel();
                     }else{

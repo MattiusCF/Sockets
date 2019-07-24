@@ -47,17 +47,6 @@ public class Connection implements Runnable {
             e.printStackTrace();
         }
     }
-    public String list(){
-        try{
-            out.writeUTF("list;0;");
-            Thread.sleep(1000);
-            System.out.println("se acaba de ejecutar la funcion list");
-            return msg;
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return "error";
-    }
     public String listP(){
         try {
             out.writeUTF("listP;0");
@@ -73,6 +62,14 @@ public class Connection implements Runnable {
             out.writeUTF(order);
             Thread.sleep(1000);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void deletePlayer(String order){
+        try {
+            out.writeUTF(order);
+            Thread.sleep(1000);
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -114,12 +111,9 @@ public class Connection implements Runnable {
         } catch (Exception e){
             e.printStackTrace();
         }
-        System.out.print("Antes de entrar al if, la sala: "+room+" ->");
         if(msg.equals("2")){
-            System.out.print(" Está lista");
             return true;
         }else{
-            System.out.println(" No está lista y el mensaje es: "+msg);
             return false;
         }
     }
@@ -128,14 +122,28 @@ public class Connection implements Runnable {
         msg="0";
         try {
             out.writeUTF("isWinner;"+room);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (Exception e){
             e.printStackTrace();
         }
-        System.out.println("En isWinner, msg retorna= "+msg);
         if (msg.equals("2")){
             return true;
         }else{
+            return false;
+        }
+    }
+
+    public Boolean isTie(int room){
+        msg="0";
+        try {
+            out.writeUTF("isTie"+room);
+            Thread.sleep(1000);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        if (msg.equals("2")){
+            return true;
+        } else{
             return false;
         }
     }
