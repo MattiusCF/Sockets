@@ -44,11 +44,14 @@ public class InitializeController {
     @FXML
     private TextField playerName;
 
+    @FXML
+    private TextField serverIP;
+
     public Connection getConnection(){
         return connection;
     }
-    public void createConnection(String name){
-        connection = new Connection();
+    public void createConnection(String name, String ip){
+        connection = new Connection(ip);
         NThread = new Thread(connection);
         connection.sendName(name);
         NThread.start();
@@ -57,8 +60,9 @@ public class InitializeController {
     public InitializeController(){
 
     }
+    //Constructor principal
     public InitializeController(Stage primaryStage){
-        //Carga el primaryStage en una variable local para modificarlo mas adelante sin tener que establecerlo como dato de entrada.
+        //Carga el primaryStage en una variable local para modificarlo mas adelante sin tener que establecerlo como dato de entrada siempre.
         this.primaryStage = primaryStage;
         try{
             //Carga un anchorPane vacio en el que se van a cargar las pantallas a lo largo de la ejecucion.
@@ -175,9 +179,10 @@ public class InitializeController {
         //Se carga en el pane vacio la nueva vista
         mainPanel.getChildren().setAll(panel);
     }
+    //Crea la conexion con el servidor y cambia a la vista siguiente
     @FXML
     void playON(ActionEvent event){
-        Main.initialize.createConnection(playerName.getText());
+        Main.initialize.createConnection(playerName.getText(), serverIP.getText());
         Main.initialize.startPanel();
     }
     @FXML

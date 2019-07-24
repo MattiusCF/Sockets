@@ -19,10 +19,11 @@ public class Connection implements Runnable {
     private int port = 2027;
     //Para trabajar en local: "localhost"
     //Para trabajar en distintos ordenadores "La ip del servidor"
-    private String host = "192.168.192.7";
+    private String host;
 
-    public Connection(){
+    public Connection(String ip){
         try{
+            host = ip;
             isOpen=true;
             //Crea el socket con el host y el puerto y declara los streams de comunicacion
             player = new Socket(host, port);
