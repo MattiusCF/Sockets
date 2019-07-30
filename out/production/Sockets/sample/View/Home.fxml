@@ -15,21 +15,28 @@
             <Image url="@../resource/fondo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="play" layoutX="120.0" layoutY="200.0" mnemonicParsing="false" onAction="#playON" prefHeight="160.0" prefWidth="160.0" text="&gt;">
+      <Button fx:id="play" layoutX="120.0" layoutY="200.0" mnemonicParsing="false" onAction="#playON" prefHeight="160.0" prefWidth="160.0">
          <font>
             <Font size="77.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PLay.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
       <Label layoutX="50.0" layoutY="435.0" prefHeight="40.0" prefWidth="320.0" text="¿Cual es tu nombre?" textFill="WHITE">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="playerName" layoutX="50.0" layoutY="395.0" prefHeight="40.0" prefWidth="320.0">
+      <TextField fx:id="playerName" alignment="CENTER" layoutX="50.0" layoutY="395.0" prefHeight="40.0" prefWidth="320.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField alignment="CENTER" layoutX="118.0" layoutY="365.0" promptText="IP del servidor" />
+      <TextField fx:id="serverIP" alignment="CENTER" layoutX="118.0" layoutY="365.0" promptText="IP del servidor" />
    </children>
 </AnchorPane>

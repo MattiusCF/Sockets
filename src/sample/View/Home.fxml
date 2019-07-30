@@ -15,10 +15,17 @@
             <Image url="@../resource/fondo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="play" layoutX="120.0" layoutY="200.0" mnemonicParsing="false" onAction="#playON" prefHeight="160.0" prefWidth="160.0" text="&gt;">
+      <Button fx:id="play" layoutX="120.0" layoutY="200.0" mnemonicParsing="false" onAction="#playON" prefHeight="160.0" prefWidth="160.0">
          <font>
             <Font size="77.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PLay.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
       <Label layoutX="50.0" layoutY="435.0" prefHeight="40.0" prefWidth="320.0" text="¿Cual es tu nombre?" textFill="WHITE">
          <font>
