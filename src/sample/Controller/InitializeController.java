@@ -216,18 +216,14 @@ public class InitializeController {
 
     @FXML
     void surrender(ActionEvent event) {
-
+        Main.initialize.deletePlayer();
+        Main.initialize.FinalPanel();
     }
 
     @FXML
     void finishGame(ActionEvent event) {
-
-    }
-
-    public void createGame(int matches){
-        order = "create;"+matches+";";
-        connection.createGame(order);
-        Main.initialize.waitPanel();
+        Main.initialize.deletePlayer();
+        Main.initialize.startPanel();
     }
 
     public String listPlayers(){

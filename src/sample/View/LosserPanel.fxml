@@ -5,10 +5,33 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.Cursor?>
 <AnchorPane prefHeight="480.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.InitializeController">
    <children>
-      <Button fx:id="exit" layoutX="40.0" layoutY="416.0" mnemonicParsing="false" onAction="#surrender" prefHeight="40.0" prefWidth="120.0" text="Salir" />
-      <Button fx:id="next" layoutX="240.0" layoutY="416.0" mnemonicParsing="false" onAction="#continueGame" prefHeight="40.0" prefWidth="120.0" text="Continuar" />
+      <Button style="-fx-background-color: white" fx:id="exit" layoutX="40.0" layoutY="416.0" mnemonicParsing="false" onAction="#surrender" prefHeight="40.0" prefWidth="120.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="37.0" fitWidth="110.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/rendirse.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button style="-fx-background-color: white" fx:id="next" layoutX="240.0" layoutY="416.0" mnemonicParsing="false" onAction="#continueGame" prefHeight="40.0" prefWidth="120.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="37.0" fitWidth="110.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/continuar.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </Button>
       <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="80.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/perdedor.jpg" />
