@@ -6,8 +6,16 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="480.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.PlayerController">
    <children>
+      <ImageView fitHeight="480.0" fitWidth="400.0" pickOnBounds="false">
+         <image>
+            <Image url="@../resource/fondo2.jpg" />
+         </image>
+      </ImageView>
       <Label alignment="CENTER" layoutX="120.0" layoutY="40.0" prefHeight="40.0" prefWidth="160.0" text="¡Elige!">
          <font>
             <Font size="28.0" />
@@ -16,25 +24,53 @@
       <Label alignment="CENTER" layoutX="50.0" layoutY="220.0" prefHeight="40.0" prefWidth="80.0" text="Piedra" />
       <Label alignment="CENTER" layoutX="170.0" layoutY="220.0" prefHeight="40.0" prefWidth="80.0" text="Papel" />
       <Label alignment="CENTER" layoutX="290.0" layoutY="220.0" prefHeight="40.0" prefWidth="80.0" text="Tijeras" />
-      <Button fx:id="surrenderButton" layoutX="40.0" layoutY="400.0" mnemonicParsing="false" onAction="#surrender" prefHeight="40.0" prefWidth="120.0" text="Rendirse">
-         <font>
-            <Font size="21.0" />
-         </font>
+      <Button style="-fx-background-color: white" fx:id="surrenderButton" layoutX="40.0" layoutY="400.0" mnemonicParsing="false" onAction="#surrender" prefHeight="40.0" prefWidth="120.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="40.0" fitWidth="110.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/rendirse.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button fx:id="rock" layoutX="50.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectRock" prefHeight="80.0" prefWidth="80.0" text="O">
-         <font>
-            <Font size="32.0" />
-         </font>
+      <Button style="-fx-background-color: white" fx:id="rock" layoutX="50.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectRock" prefHeight="80.0" prefWidth="80.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="70.0" fitWidth="70.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/piedra.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button fx:id="paper" layoutX="170.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectPaper" prefHeight="80.0" prefWidth="80.0" text="A">
-         <font>
-            <Font size="32.0" />
-         </font>
+      <Button style="-fx-background-color: white" fx:id="paper" layoutX="170.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectPaper" prefHeight="80.0" prefWidth="80.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="70.0" fitWidth="70.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/papel.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button fx:id="scissors" layoutX="290.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectScissors" prefHeight="80.0" prefWidth="80.0" text="X">
-         <font>
-            <Font size="32.0" />
-         </font>
+      <Button style="-fx-background-color: white" fx:id="scissors" layoutX="290.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectScissors" prefHeight="80.0" prefWidth="80.0">
+         <graphic>
+            <ImageView cache="true" fitHeight="70.0" fitWidth="70.0" pickOnBounds="false" preserveRatio="false" smooth="false">
+               <image>
+                  <Image url="@../resource/tijeras.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>
