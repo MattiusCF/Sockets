@@ -66,7 +66,7 @@ public class InitializeController {
         this.primaryStage = primaryStage;
         try{
             //Carga un anchorPane vacio en el que se van a cargar las pantallas a lo largo de la ejecucion.
-            mainPanel = (AnchorPane) FXMLLoader.load(getClass().getResource("../View/mainPanel.fxml"));
+            mainPanel = (AnchorPane) FXMLLoader.load(getClass().getResource("@../View/mainPanel.fxml"));
         }catch (IOException e){
             e.printStackTrace();
         }
